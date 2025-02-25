@@ -66,6 +66,7 @@
                 Console.WriteLine();
             }
 
+
             if (planetChoice == 1)
             {
                 weightLbs = (weightLbs * gravVenus);
