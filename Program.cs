@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.ComponentModel.Design;
+using System.Security.Cryptography;
 
 namespace Topic_5___Assignment
 {
@@ -8,9 +9,9 @@ namespace Topic_5___Assignment
         {
             double gravVenus, gravMars, gravJupiter, gravSaturn, gravUranus, gravNeptune, weightLbs;
 
-            int planetChoice, secretNum, secretNumGuess, scoreCount;
+            int planetChoice, secretNum, secretNumGuess, scoreCount, questionCount, genZStartYear;
 
-            string agreeHelpBoogie, teletubbyCount ;
+            string agreeHelpBoogie, multipleCoiceAns ;
 
             gravVenus = 0.78;
             gravMars = 0.39;
@@ -156,32 +157,154 @@ namespace Topic_5___Assignment
 
 
             scoreCount = 0;
+            questionCount = 1;
+
 
             Console.WriteLine("Your teacher has sprung a pop quiz on you and you didn't study!");
             Console.WriteLine("Try your best, and best of luck");
 
             Console.WriteLine("===============================================================");
-            Console.WriteLine("Question One: How many teletubies make up the core group?");
+            Console.WriteLine("Question " + questionCount + ": How many teletubies make up the core group?");
             Console.WriteLine("a) 5");
             Console.WriteLine("b) 3");
             Console.WriteLine("c) 4");
             Console.WriteLine("d) 6");
             Console.WriteLine();
             Console.Write("Your Answer: ");
-            teletubbyCount = Console.ReadLine().ToLower();
+            multipleCoiceAns = Console.ReadLine().ToLower();
 
-            if (teletubbyCount == "c")
+            if (multipleCoiceAns == "c")
+            {
+                Console.WriteLine("Correct! There will always only be four. Any others are frauds.");
+                scoreCount += 1;
+            }
+            else if (multipleCoiceAns == "a")
+                Console.WriteLine("Incorrect! How could you forget there were four! They were iconic mythical beings! Who would be the fifth??");
 
+            else if (multipleCoiceAns == "b")
+                Console.WriteLine("Incorrect! I believe you forgot the red one! How dare you 0_0");
+
+            else if (multipleCoiceAns == "d")
+                Console.WriteLine("Incorrect! Tyhe teletubies were always a quartet! Maybe youre confusing them with the lazy reboot!");
+
+            Console.WriteLine("Press Enter to Continue to the Next Question");
+            Console.WriteLine("You have " + (4 - questionCount) + " questions left");
+            Console.ReadLine();
+            questionCount += 1;
+            Console.Clear();
+
+            Console.WriteLine("===============================================================");
+            Console.WriteLine("Question " + questionCount + ": What Year did Gen Z Begin?");
+            int.TryParse(Console.ReadLine(), out genZStartYear);
+
+            if (genZStartYear == 1997)
+            {
+                Console.WriteLine("Correct! Making this oldest Gen Z humans " + (2025 - genZStartYear) + "!");
+                scoreCount += 1;
+            }
+            else
+            {
+                Console.WriteLine("That is Incorrect!");
+                if (genZStartYear > 1997 && genZStartYear <= 2000)
+                {
+                    Console.WriteLine("You were really close! However, that year was too large! The correct answer was 1997");
+                }
+                else if (genZStartYear < 1997 && genZStartYear >= 1994)
+                {
+                    Console.WriteLine("You were really close ! However your answer was too small!");
+                    Console.WriteLine("The correct answer was 1997!");
+                }
+                else
+                {
+                    Console.WriteLine("You were way off! Gen Z started in 1997!");
+                }
+
+            }
+            Console.WriteLine("Press Enter to Continue to the Next Question");
+            Console.WriteLine("You have " + (4 - questionCount) + " questions left");
+            Console.ReadLine();
+            questionCount += 1;
+            Console.Clear();
+
+            Console.WriteLine("===============================================================");
+            Console.WriteLine("Question " + questionCount + ": How Many Significant Digits Are In the Number 0067.440");
+            Console.WriteLine("a) 4");
+            Console.WriteLine("b) 5");
+            Console.WriteLine("c) 6");
+            Console.WriteLine("d) 7");
+            Console.WriteLine();
+            Console.Write("Your answer is: ");
+            multipleCoiceAns = Console.ReadLine().ToLower();
+
+            if (multipleCoiceAns == "b")
             {
                 Console.WriteLine("Correct!");
                 scoreCount += 1;
             }
+            else
+            {
+                Console.WriteLine("Incorrect! The correct answer was b!");
+            }
+
+            Console.WriteLine("Press Enter to Continue to the Next Question");
+            Console.WriteLine("You have " + (4 - questionCount) + " questions left");
+            Console.ReadLine();
+            questionCount += 1;
+            Console.Clear();
+
+            Console.WriteLine("===============================================================");
+            Console.WriteLine("Question " + questionCount + " |The Final Boss| : What Country has the Most Northern Human Settelment?");
+            Console.WriteLine("a) Canada");
+            Console.WriteLine("b) Denmark (Greenland)");
+            Console.WriteLine("c) Russia");
+            Console.WriteLine("d) Sweeden");
+            Console.WriteLine();
+            Console.WriteLine("Your Answer: ");
+            multipleCoiceAns = Console.ReadLine().ToLower();
+
+            if (multipleCoiceAns == "a")
+            {
+                Console.WriteLine("Correct! Alert, Nunavut is the most northern settlement in the world!");
+                scoreCount += 1;
+            }
+
+            else if (multipleCoiceAns == "b")
+            {
+                Console.WriteLine("Incorrect! Denmark is a reasonable answer due to it's ownership, however,");
+                Console.WriteLine("Canada has the most northern settlement in the world, located in Alert Nunavut!");
+            }
+
+            else if (multipleCoiceAns == "c")
+            {
+                Console.WriteLine("Although Russia is geographically very north, it does not contain the most northern settlement!");
+                Console.WriteLine("Canada has the most northern settlement in the world, located in Alert Nunavut!");
+            }
+
+            Console.WriteLine("d")
+            {
+                Console.WriteLine("Incorrect! Denmark is a reasonable answer due to it's ownership, however,");
+                Console.WriteLine("Canada has the most northern settlement in the world, located in Alert Nunavut!");
+            }
+            Console.WriteLine("You have " + (4 - questionCount) + " questions left");
+            Console.WriteLine("Press Enter to Continue to the results");
+            Console.ReadLine();
+            questionCount += 1;
+            Console.Clear();
+
+            Console.WriteLine("===============================================================");
+            Console.WriteLine("YOUR SCORE: " + scoreCount + "/4!");
+            Console.WriteLine("\t    " + ((scoreCount / 4) * 100) + "%");
+            Console.WriteLine();
+            if (((scoreCount / 4) * 100) <= 50)
+            {
+                Console.WriteLine("You did not pass the quiz! Good effort tho :)");
+            }
+
+            else if (scoreCount == 3)
+                Console.WriteLine("Congratulations! You Passed The Quiz with 75%!");
 
             else
-                Console.WriteLine("Incorrect!");
-
-
-
+                Console.WriteLine("Woohoo! You aced this quiz with a grand total of 100%! Keep up the good work!");
         }   
     }   
 }
