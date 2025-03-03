@@ -11,7 +11,7 @@ namespace Topic_5___Assignment
 
             int planetChoice, secretNum, secretNumGuess, scoreCount, questionCount, genZStartYear;
 
-            string agreeHelpBoogie, multipleCoiceAns ;
+            string agreeHelpBoogie, multipleCoiceAns, trueFalse;
 
             gravVenus = 0.78;
             gravMars = 0.39;
@@ -185,7 +185,14 @@ namespace Topic_5___Assignment
                 Console.WriteLine("Incorrect! I believe you forgot the red one! How dare you 0_0");
 
             else if (multipleCoiceAns == "d")
-                Console.WriteLine("Incorrect! Tyhe teletubies were always a quartet! Maybe youre confusing them with the lazy reboot!");
+                Console.WriteLine("Incorrect! The teletubies were always a quartet! Maybe youre confusing them with the lazy reboot!");
+
+            else
+            {
+                Console.WriteLine("Do you not know how to answer a multiple choice question? Where was " + multipleCoiceAns + " on the list???");
+                Console.WriteLine("Try better next time! Such a big dissapointment");
+            }
+
 
             Console.WriteLine("Press Enter to Continue to the Next Question");
             Console.WriteLine("You have " + (4 - questionCount) + " questions left");
@@ -227,23 +234,41 @@ namespace Topic_5___Assignment
             Console.Clear();
 
             Console.WriteLine("===============================================================");
-            Console.WriteLine("Question " + questionCount + ": How Many Significant Digits Are In the Number 0067.440");
-            Console.WriteLine("a) 4");
-            Console.WriteLine("b) 5");
-            Console.WriteLine("c) 6");
-            Console.WriteLine("d) 7");
+            Console.WriteLine("Question " + questionCount + " Which Leonardo was the famous heartthrob from Titanic");
+            Console.WriteLine("a) Da Vinchi");
+            Console.WriteLine("b) Dicaprio");
+            Console.WriteLine("c) Di-craprio");
+            Console.WriteLine("d) The Dog Man");
             Console.WriteLine();
             Console.Write("Your answer is: ");
             multipleCoiceAns = Console.ReadLine().ToLower();
 
             if (multipleCoiceAns == "b")
             {
-                Console.WriteLine("Correct!");
+                Console.WriteLine("Correct! Dicaprio, played the 90s heartthrob Jack from Titanic");
                 scoreCount += 1;
             }
+            else if (multipleCoiceAns == "a")
+            {
+                Console.WriteLine("Incorrect! leonardo Da Vinchi was the famous renaissance painter, not modern-day actor!");
+                Console.WriteLine("Maybe you should've payed attention to art history in grade school :P.");
+            }
+
+            else if (multipleCoiceAns == "c")
+            {
+                Console.WriteLine("Incorrect! Although it should be the correct answer, there is no such person as Leonardo Di-craprio :(");
+            }
+
+            else if (multipleCoiceAns == "d")
+            {
+                Console.WriteLine("Who is even Leonardo the Dog Man? I think you've finally lost it.");
+                Console.WriteLine("Getting some help should be a good first step :) ");
+            }
+
             else
             {
-                Console.WriteLine("Incorrect! The correct answer was b!");
+                Console.WriteLine("Do you not know how to answer a multiple choice question? Where was " + multipleCoiceAns + " on the list???");
+                Console.WriteLine("Try better next time! Such a big dissapointment");
             }
 
             Console.WriteLine("Press Enter to Continue to the Next Question");
@@ -253,7 +278,7 @@ namespace Topic_5___Assignment
             Console.Clear();
 
             Console.WriteLine("===============================================================");
-            Console.WriteLine("Question " + questionCount + " |The Final Boss| : What Country has the Most Northern Human Settelment?");
+            Console.WriteLine("Question " + questionCount + ": What Country has the Most Northern Human Settelment?");
             Console.WriteLine("a) Canada");
             Console.WriteLine("b) Denmark (Greenland)");
             Console.WriteLine("c) Russia");
@@ -280,22 +305,84 @@ namespace Topic_5___Assignment
                 Console.WriteLine("Canada has the most northern settlement in the world, located in Alert Nunavut!");
             }
 
-            Console.WriteLine("d")
+            else if (multipleCoiceAns == "d")
             {
                 Console.WriteLine("Incorrect! Denmark is a reasonable answer due to it's ownership, however,");
                 Console.WriteLine("Canada has the most northern settlement in the world, located in Alert Nunavut!");
             }
+
+
+            else
+            {
+                Console.WriteLine("Do you not know how to answer a multiple choice question? Where was " + multipleCoiceAns + " on the list???");
+                Console.WriteLine("Try better next time! Such a big dissapointment");
+            }
+
+
             Console.WriteLine("You have " + (4 - questionCount) + " questions left");
             Console.WriteLine("Press Enter to Continue to the results");
             Console.ReadLine();
             questionCount += 1;
             Console.Clear();
 
+
+            Console.WriteLine("===============================================================");
+            Console.WriteLine("Question " + questionCount + " True or False; All birds can fly :) ");
+            trueFalse = Console.ReadLine().ToLower();
+
+            if (trueFalse == "t" || trueFalse == "true" || trueFalse == "ture" || trueFalse == "tru")
+
+            {
+                Console.WriteLine("No bueno! That is incorrect, think of the mighty penguin! How do you think they feel. You heartless psychopath.");
+            }
+
+            else if (trueFalse == "f" ||  trueFalse == "false" ||  trueFalse == "fals")
+            {
+                Console.WriteLine("Muy bueno! That it mighty correct! Thank you for acknowledging the existance of penguins");
+                questionCount += 1;
+            }
+
+            else
+            {
+                Console.WriteLine("Do you not know how to answer a true or false question? Where was " + multipleCoiceAns + " as an option???");
+                Console.WriteLine("Try better next time! Such a big dissapointment");
+            }
+
+
+            Console.WriteLine("You have " + (4 - questionCount) + " questions left");
+            Console.WriteLine("Press Enter to Continue to the results");
+            Console.ReadLine();
+            questionCount += 1;
+            Console.Clear();
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             Console.WriteLine("===============================================================");
             Console.WriteLine("YOUR SCORE: " + scoreCount + "/4!");
             Console.WriteLine("\t    " + ((scoreCount / 4) * 100) + "%");
             Console.WriteLine();
-            if (((scoreCount / 4) * 100) <= 50)
+
+            if (scoreCount == 0)
+            {
+                Console.WriteLine("Ever heard that saying that guessing on a true or false quiz would theoretically produce 50%?");
+                Console.WriteLine("Unfortunatly for you, this is not a true or false quiz. You didn't even score one point! Not even one point? How tragic :(");
+                Console.WriteLine("You failed hard -_-");
+            }   
+
+            else if (((scoreCount / 4) * 100) <= 50 && ((scoreCount / 4) * 100) > 25)
             {
                 Console.WriteLine("You did not pass the quiz! Good effort tho :)");
             }
