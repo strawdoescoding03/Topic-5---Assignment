@@ -11,7 +11,7 @@ namespace Topic_5___Assignment
 
             int planetChoice, secretNum, secretNumGuess, scoreCount, questionCount, genZStartYear;
 
-            string agreeHelpBoogie, multipleCoiceAns, trueFalse;
+            string agreeHelpBoogie, multipleCoiceAns, trueFalse, thumbPeopleTitle;
 
             gravVenus = 0.78;
             gravMars = 0.39;
@@ -330,7 +330,7 @@ namespace Topic_5___Assignment
             Console.WriteLine("Question " + questionCount + " True or False; All birds can fly :) ");
             trueFalse = Console.ReadLine().ToLower();
 
-            if (trueFalse == "t" || trueFalse == "true" || trueFalse == "ture" || trueFalse == "tru")
+            if (trueFalse == "t" || trueFalse == "true" || trueFalse == "tru")
 
             {
                 Console.WriteLine("No bueno! That is incorrect, think of the mighty penguin! How do you think they feel. You heartless psychopath.");
@@ -355,8 +355,20 @@ namespace Topic_5___Assignment
             questionCount += 1;
             Console.Clear();
 
+
+            Console.WriteLine("===============================================================");
+            Console.WriteLine("Question " + questionCount + " What is the name of the movie with the thumb people :) ");
+            thumbPeopleTitle = Console.ReadLine().ToLower();
+            Console.Write("Your answer: ");
+
+
+            if (thumbPeopleTitle == "spy kids" || thumbPeopleTitle == "spy kids 2" || thumbPeopleTitle == "spykids")
+
+            
+                Console.WriteLine("");
             
 
+            else 
 
 
 
@@ -371,8 +383,8 @@ namespace Topic_5___Assignment
 
 
             Console.WriteLine("===============================================================");
-            Console.WriteLine("YOUR SCORE: " + scoreCount + "/4!");
-            Console.WriteLine("\t    " + ((scoreCount / 4) * 100) + "%");
+            Console.WriteLine("YOUR SCORE: " + scoreCount + "/6!");
+            Console.WriteLine("\t    " + ((scoreCount / 6) * 100) + "%");
             Console.WriteLine();
 
             if (scoreCount == 0)
@@ -382,7 +394,7 @@ namespace Topic_5___Assignment
                 Console.WriteLine("You failed hard -_-");
             }   
 
-            else if (((scoreCount / 4) * 100) <= 50 && ((scoreCount / 4) * 100) > 25)
+            else if (((scoreCount / 6) * 100) <= 50 && ((scoreCount / 6) * 100) > 25)
             {
                 Console.WriteLine("You did not pass the quiz! Good effort tho :)");
             }
