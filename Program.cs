@@ -195,7 +195,7 @@ namespace Topic_5___Assignment
 
 
             Console.WriteLine("Press Enter to Continue to the Next Question");
-            Console.WriteLine("You have " + (4 - questionCount) + " questions left");
+            Console.WriteLine("You have " + (6 - questionCount) + " questions left");
             Console.ReadLine();
             questionCount += 1;
             Console.Clear();
@@ -228,7 +228,7 @@ namespace Topic_5___Assignment
 
             }
             Console.WriteLine("Press Enter to Continue to the Next Question");
-            Console.WriteLine("You have " + (4 - questionCount) + " questions left");
+            Console.WriteLine("You have " + (6 - questionCount) + " questions left");
             Console.ReadLine();
             questionCount += 1;
             Console.Clear();
@@ -272,7 +272,7 @@ namespace Topic_5___Assignment
             }
 
             Console.WriteLine("Press Enter to Continue to the Next Question");
-            Console.WriteLine("You have " + (4 - questionCount) + " questions left");
+            Console.WriteLine("You have " + (6 - questionCount) + " questions left");
             Console.ReadLine();
             questionCount += 1;
             Console.Clear();
@@ -319,7 +319,7 @@ namespace Topic_5___Assignment
             }
 
 
-            Console.WriteLine("You have " + (4 - questionCount) + " questions left");
+            Console.WriteLine("You have " + (6 - questionCount) + " questions left");
             Console.WriteLine("Press Enter to Continue to the results");
             Console.ReadLine();
             questionCount += 1;
@@ -339,17 +339,17 @@ namespace Topic_5___Assignment
             else if (trueFalse == "f" ||  trueFalse == "false" ||  trueFalse == "fals")
             {
                 Console.WriteLine("Muy bueno! That it mighty correct! Thank you for acknowledging the existance of penguins");
-                questionCount += 1;
+                scoreCount += 1;
             }
 
             else
             {
-                Console.WriteLine("Do you not know how to answer a true or false question? Where was " + multipleCoiceAns + " as an option???");
+                Console.WriteLine("Do you not know how to answer a true or false question? Where was " + trueFalse + " as an option???");
                 Console.WriteLine("Try better next time! Such a big dissapointment");
             }
 
 
-            Console.WriteLine("You have " + (4 - questionCount) + " questions left");
+            Console.WriteLine("You have " + (6 - questionCount) + " questions left");
             Console.WriteLine("Press Enter to Continue to the results");
             Console.ReadLine();
             questionCount += 1;
@@ -364,43 +364,59 @@ namespace Topic_5___Assignment
 
             if (thumbPeopleTitle == "spy kids" || thumbPeopleTitle == "spy kids 2" || thumbPeopleTitle == "spykids")
 
-            
-                Console.WriteLine("");
-            
-
-            else 
-
+            {
+                Console.WriteLine("Correct! You are in the know with pop culture!");
+                scoreCount += 1;
+            }
 
 
+            else
+            {
+                Console.WriteLine("Incorrect! The famous film franchise Spy Kids was known for their thumb people, the Thumb Thumbs");
+                Console.WriteLine("It's a shame one is such out of touch with groundbreaking film making.");
+            }
+                
 
 
-
-
-
-
-
+            Console.WriteLine("You have " + (6 - questionCount) + " questions left");
+            Console.WriteLine("Press Enter to Continue to the results");
+            Console.ReadLine();           
+            Console.Clear();
 
 
 
             Console.WriteLine("===============================================================");
             Console.WriteLine("YOUR SCORE: " + scoreCount + "/6!");
-            Console.WriteLine("\t    " + ((scoreCount / 6) * 100) + "%");
-            Console.WriteLine();
+            Console.WriteLine("You got " + ((scoreCount / 6.0) * 100 + " %"));
+            Console.WriteLine(scoreCount);
 
             if (scoreCount == 0)
             {
                 Console.WriteLine("Ever heard that saying that guessing on a true or false quiz would theoretically produce 50%?");
                 Console.WriteLine("Unfortunatly for you, this is not a true or false quiz. You didn't even score one point! Not even one point? How tragic :(");
                 Console.WriteLine("You failed hard -_-");
-            }   
+            }
 
-            else if (((scoreCount / 6) * 100) <= 50 && ((scoreCount / 6) * 100) > 25)
+
+            else if (scoreCount == 1 || scoreCount == 2)
+
             {
-                Console.WriteLine("You did not pass the quiz! Good effort tho :)");
+                Console.WriteLine("Some says hard work pays off, however you must actually work hard. You did not pass this quiz.");
+                Console.WriteLine("Try better next time, or maybe use Chat GPT next time.");
             }
 
             else if (scoreCount == 3)
-                Console.WriteLine("Congratulations! You Passed The Quiz with 75%!");
+            {
+                Console.WriteLine("Congratulations! You Passed The Quiz with 50%!");
+                Console.WriteLine("A small pass is still a pass. Good for you.");
+            }
+
+            else if (scoreCount == 4 || scoreCount == 5)
+
+            {
+                Console.WriteLine("You tried hard, and passed! Although you could have done better, you gave most of your all");
+                Console.WriteLine("I would say 8/10 good job (however, theres always that 20 per cent room for improvement).");
+            }
 
             else
                 Console.WriteLine("Woohoo! You aced this quiz with a grand total of 100%! Keep up the good work!");
